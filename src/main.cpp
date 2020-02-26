@@ -41,7 +41,7 @@ int main(int argc, const char** argv) {
     of frames and overall seconds it took */
 	Mat img;
 	while(true) {
-        f++;
+        	f++;
 		camera >> img;
 		imshow("Camera", img);
 		int key = waitKey(5);
@@ -116,13 +116,12 @@ void detectAndDisplay( Mat frame ){
         std::vector<Rect> eyes;
         eyes_cascade.detectMultiScale( faceROI, eyes );
             
-    for ( size_t j = 0; j < eyes.size(); j++ ){
-        Point eye_center( faces[i].x + eyes[j].x + eyes[j].width/2, faces[i].y + eyes[j].y + eyes[j].height/2 );
-        int radius = cvRound( (eyes[j].width + eyes[j].height)*0.25 );
-        circle( frame, eye_center, radius, Scalar( 255, 0, 0 ), 4 );
-    }
-}
+   	for ( size_t j = 0; j < eyes.size(); j++ ){
+        	Point eye_center( faces[i].x + eyes[j].x + eyes[j].width/2, faces[i].y + eyes[j].y + eyes[j].height/2 );
+       		int radius = cvRound( (eyes[j].width + eyes[j].height)*0.25 );
+        	circle( frame, eye_center, radius, Scalar( 255, 0, 0 ), 4 );
+    	}
+     }
      //-- Show what you got
     imshow( "Capture - Face detection", frame );
-}
 }
