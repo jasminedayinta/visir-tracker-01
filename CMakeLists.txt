@@ -28,6 +28,7 @@ set(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS} /DEBUG /INCREMENTA
 endif(MSVC)
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin) 
 #set(IB_API_INCLUDE_DIR "" CACHE PATH "Path to the IP API")
+set(OpenCV_DIR /usr/local/Cellar/opencv/4.2.0_1/installation/OpenCV-master/lib/cmake/opencv4)
 
 # Properties -> C/C++ -> General -> Additional Include Directories
 include_directories(${PROJECT_SOURCE_DIR}/include ${OpenCV_INCLUDE_DIRS})
